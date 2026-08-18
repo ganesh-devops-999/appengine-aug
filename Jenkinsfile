@@ -11,11 +11,12 @@ pipeline {
             steps {
                 echo "===== Setting up Python 3.11 ====="
                 sh '''
-                    python3 --version
-                    python3 -m venv venv
+                    python3.11 --version
+                    rm -rf venv
+                    python3.11 -m venv venv
 
                     . venv/bin/activate
-
+                    python --version
                     pip install --upgrade pip setuptools wheel
                     pip install -r requirements.txt
                 '''
