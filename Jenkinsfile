@@ -7,13 +7,12 @@ pipeline {
 
     stages {
 
-        stage('Setup Python 3.11') {
+        stage('Setup Python 3.13') {
             steps {
-                echo "===== Setting up Python 3.11 ====="
+                echo "===== Setting up Python 3.13 ====="
                 sh '''
-                    python3.11 --version
+                    python3 --version
                     rm -rf venv
-                    python3.11 -m venv venv
 
                     . venv/bin/activate
                     python --version
